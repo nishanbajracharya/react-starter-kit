@@ -19,7 +19,7 @@ module.exports = function override(config, env) {
     }
   })
 
-  config.plugins.push(envPlugin)
+  config.plugins.push(envPlugin);
 
   return config;
 }
