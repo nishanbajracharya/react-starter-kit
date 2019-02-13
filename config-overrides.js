@@ -6,7 +6,7 @@ const env = dotenv.config();
 const envVariables = env.error ?  {} : Object.keys(env.parsed)
   .reduce((acc, key) => ({
     ...acc,
-    [key]: JSON.stringify(process.env[key])
+    [key]: JSON.stringify(env.parsed[key])
   }), {});
 
 module.exports = function override(config, env) {
