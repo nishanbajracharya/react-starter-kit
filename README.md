@@ -38,11 +38,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Webpack configuration
+This boilerplate uses [`react-app-rewired`](https://github.com/timarney/react-app-rewired) in order to modify webpack configs without ejecting. To learn more, visit [`react-app-rewired`](https://github.com/timarney/react-app-rewired).
+
 ## Environment Variables
-You can add a `.env` file in the root directory of our project to use in the project. The starter kit has an `.env.example` file included to get started.
+You can add a `.env` file in the root directory of the project to use in the project. The starter kit has an `.env.example` file included to get started.
 
 ```
-cp .env.example .env
+$ cp .env.example .env
 ```
 
 Add your environment variables in `.env` file. Then use it in your project.
@@ -50,3 +53,31 @@ Add your environment variables in `.env` file. Then use it in your project.
 ```js
 console.log(process.env.APP_NAME)
 ```
+
+## Advanced Environment Configuration
+If you need to configure your project for multiple environments, (eg. `development`, `staging`, `production`, etc), you can modify the `config-overrides.js` file to add environments and respective `env` files.
+
+You can inject a custom environment into the config file by adding shell arguments or modifying the `package.json` file.
+
+```
+$ yarn start --environment=staging
+```
+OR
+```json
+"start:staging": "react-app-rewired --environment:staging"
+```
+
+Next, in the `config-overrides.js` file, you receive the value in the `injectedEnvironment` variable. To map your custom environment to a `.env` file, modify the `getEnvironmentFile` function.
+
+```js
+function getEnvironmentFile(env) {
+  switch (env) {
+   case 'staging':
+      return path.resolve('./.env.staging')
+    default:
+      return path.resolve('./.env');
+  }
+}
+```
+
+If you do not inject any environment, it will use the default `NODE_ENV` value and the `.env` file.
