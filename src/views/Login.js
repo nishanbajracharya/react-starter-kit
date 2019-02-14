@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+/**
+ * View for login.
+ */
 const Login = () => (
   <div>
     <h2>Login to your account</h2>
@@ -9,6 +12,6 @@ const Login = () => (
       <button type="submit">Login</button>
     </form>
   </div>
-)
+);
 
 export default Login;
