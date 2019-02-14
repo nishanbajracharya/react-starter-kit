@@ -3,6 +3,12 @@ const dotenv = require('dotenv');
 const webpack = require('webpack');
 const argv = require('minimist')(process.argv.slice(2));
 
+/**
+ * Get the env file for the environment being used.
+ *
+ * @param {String} env
+ * @returns {String}
+ */
 function getEnvironmentFile(env) {
   switch (env) {
     case 'example':
@@ -13,6 +19,13 @@ function getEnvironmentFile(env) {
 }
 
 module.exports = {
+  /**
+   * Overrides for webpack config.
+   *
+   * @param {Object} config
+   * @param {String} environment
+   * @returns {Object}
+   */
   webpack: function override(config, environment) {
     // Inject environment using shell arguments or in package.json.
     // This does not override NODE_ENV and is only limited to this file.

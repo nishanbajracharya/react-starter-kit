@@ -13,7 +13,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/",
+    "lint:fix": "npm run lint --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,6 +27,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint-config-leapfrog": "^2.0.0-beta.0",
     "react-app-rewired": "^2.1.0"
   }
 }
