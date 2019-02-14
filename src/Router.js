@@ -10,7 +10,9 @@ import PageNotFound from './views/PageNotFound';
 import AuthRoute from './components/AuthRoute';
 import PrivateRoute from './components/PrivateRoute';
 
-
+/**
+ * Main router for app.
+ */
 const Router = () => (
   <BrowserRouter>
     <Switch>
