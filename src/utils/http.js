@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 import config from '../config';
-import * as tokens from '../constants/tokens';
 import * as authService from '../services/auth';
-import * as storageUtil from '../utils/storage';
 import * as authConstants from '../constants/auth';
 import * as HttpStatus from '../constants/httpStatus';
 
@@ -23,6 +21,8 @@ const http = axios.create({
 http.interceptors.response.use(
   /**
    * Leave response as it is for a success response.
+   *
+   * @param {any} response
    */
   response => response,
   /**
@@ -36,7 +36,7 @@ http.interceptors.response.use(
 /**
  * Interceptor to catch the unauthorized responses and refresh the access token.
  *
- * @param err
+ * @param {any} err
  */
 export async function unauthorizedResponseHandlerInterceptor(err) {
   const originalRequest = err.config;

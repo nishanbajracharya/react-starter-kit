@@ -18,7 +18,7 @@ export function refreshAccessToken() {
 /**
  * Save access token in the local storage.
  *
- * @param accessToken
+ * @param {string} accessToken
  */
 export function saveAccessToken(accessToken) {
   storageUtil.set(tokens.ACCESS_TOKEN, accessToken);
