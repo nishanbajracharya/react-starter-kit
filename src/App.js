@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+/**
+ * App component class.
+ */
 class App extends Component {
+  /**
+   * Render method of App class.
+   */
   render() {
     return (
       <div className="App">

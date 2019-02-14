@@ -20,10 +20,16 @@ const isLocalhost = Boolean(
     )
 );
 
+/**
+ * Register service worker.
+ *
+ * @param {Object} config
+ */
 export function register(config) {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
@@ -54,12 +60,19 @@ export function register(config) {
   }
 }
 
+/**
+ * Register valid service worker.
+ *
+ * @param {String} swUrl
+ * @param {Object} config
+ */
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
+
         if (installingWorker == null) {
           return;
         }
@@ -98,12 +111,19 @@ function registerValidSW(swUrl, config) {
     });
 }
 
+/**
+ * Check whether service worker is valid.
+ *
+ * @param {String} swUrl
+ * @param {Object} config
+ */
 function checkValidServiceWorker(swUrl, config) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       const contentType = response.headers.get('content-type');
+
       if (
         response.status === 404 ||
         (contentType != null && contentType.indexOf('javascript') === -1)
@@ -126,6 +146,9 @@ function checkValidServiceWorker(swUrl, config) {
     });
 }
 
+/**
+ * Unregister service worker.
+ */
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {

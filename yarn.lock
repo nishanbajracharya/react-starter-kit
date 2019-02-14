@@ -2308,6 +2308,11 @@ commander@^2.11.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
 
+comment-parser@^0.5.1:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-0.5.4.tgz#089840b9cccacad2b769b231ed43081d501b9487"
+  integrity sha512-0h7W6Y1Kb6zKQMJqdX41C5qf9ITCVIsD2qP2RaqDF3GFkXFrmuAuv5zUOuo19YzyC9scjBNpqzuaRQ2Sy5pxMQ==
+
 common-tags@^1.4.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
@@ -3247,6 +3252,14 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-leapfrog@^2.0.0-beta.0:
+  version "2.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-leapfrog/-/eslint-config-leapfrog-2.0.0-beta.0.tgz#93f7a7a931171d64d891ef697be85097fd37a16f"
+  integrity sha512-UHBH3Qg5k9nUxgsxR+hQtYlAoxZJQFy+CEl0Hy4WTNIM+CsI10HIfK8zOrMLi9YR5CQuLikQG89HIe5OnGj5qg==
+  dependencies:
+    eslint-plugin-jsdoc "^3.9.1"
+    eslint-plugin-react "^7.7.0"
+
 eslint-config-react-app@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-3.0.7.tgz#d58c9216ff285e2b4de0eb8403c28b0600e45b3e"
@@ -3304,6 +3317,15 @@ eslint-plugin-import@2.14.0:
     read-pkg-up "^2.0.0"
     resolve "^1.6.0"
 
+eslint-plugin-jsdoc@^3.9.1:
+  version "3.15.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-3.15.1.tgz#b4f2bc12d04c3719c296e2b354147a1c9fe93644"
+  integrity sha512-xIQ+ajO6M6zsu5XEn5+1QyE1/P1w/l3yAXPCToZjRcrsKsg5yLTsYnrkdoJZJegE70dTZZwQ5bYPCjEbPey6cw==
+  dependencies:
+    comment-parser "^0.5.1"
+    jsdoctypeparser "^2.0.0-alpha-8"
+    lodash "^4.17.11"
+
 eslint-plugin-jsx-a11y@6.1.2:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.2.tgz#69bca4890b36dcf0fe16dd2129d2d88b98f33f88"
@@ -3318,7 +3340,7 @@ eslint-plugin-jsx-a11y@6.1.2:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-react@7.12.4:
+eslint-plugin-react@7.12.4, eslint-plugin-react@^7.7.0:
   version "7.12.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.12.4.tgz#b1ecf26479d61aee650da612e425c53a99f48c8c"
   integrity sha512-1puHJkXJY+oS1t467MjbqjvX53uQ05HXwjqDgdbGBqf5j9eeydI54G3KwiJmWciQ0HTBacIKw2jgwSBSH3yfgQ==
@@ -5502,6 +5524,11 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
+
+jsdoctypeparser@^2.0.0-alpha-8:
+  version "2.0.0-alpha-8"
+  resolved "https://registry.yarnpkg.com/jsdoctypeparser/-/jsdoctypeparser-2.0.0-alpha-8.tgz#baf137fb8e2a558810adcf19d2d2a2f680e90a5f"
+  integrity sha1-uvE3+44qVYgQrc8Z0tKi9oDpCl8=
 
 jsdom@^11.5.1:
   version "11.12.0"
