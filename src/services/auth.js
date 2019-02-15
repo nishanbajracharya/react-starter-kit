@@ -1,4 +1,3 @@
-import { getString } from '../utils/string';
 import * as tokens from '../constants/tokens';
 import * as storageUtil from '../utils/storage';
 
@@ -8,7 +7,11 @@ import * as storageUtil from '../utils/storage';
 export function refreshAccessToken() {
   // TODO: Use the current refresh token to get a new access token. Needs API call for this.
   // const refreshToken = storageUtil.get(tokens.REFRESH_TOKEN);
-  const newAccessToken = getString();
+  // Eg:
+  // const result = await loginService.refresh();
+  // const newAccessToken = result.accessToken;
+
+  const newAccessToken = '';
 
   saveAccessToken(newAccessToken);
 

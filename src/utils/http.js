@@ -40,7 +40,7 @@ http.interceptors.response.use(
  */
 export async function unauthorizedResponseHandlerInterceptor(err) {
   const originalRequest = err.config;
-  const code = err.response && err.response.data && err.response.data.code;
+  const code = err.response && err.response.status;
 
   // If the request is a retry request, simply clear the tokens.
   if (originalRequest['__isRetryRequest']) {
@@ -55,9 +55,15 @@ export async function unauthorizedResponseHandlerInterceptor(err) {
     try {
       const accessToken = await authService.refreshAccessToken();
 
-      originalRequest.headers[authConstants.AUTHORIZATION_HEADER] = accessToken;
+      const newRequest = {
+        ...originalRequest,
+        headers: {
+          ...originalRequest.headers,
+          [authConstants.AUTHORIZATION_HEADER]: `Bearer ${accessToken}`
+        }
+      };
 
-      return http.request(originalRequest);
+      return http.request(newRequest);
     } catch (error) {
       authService.clearTokens();
     }

@@ -5,7 +5,7 @@
  * @param {string} value
  */
 export function set(key, value) {
-  localStorage.set(key, value);
+  localStorage.setItem(key, value);
 }
 
 /**
@@ -15,7 +15,7 @@ export function set(key, value) {
  * @returns {string}
  */
 export function get(key) {
-  return localStorage.get(key);
+  return localStorage.getItem(key);
 }
 
 /**
