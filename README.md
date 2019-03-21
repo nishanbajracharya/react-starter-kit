@@ -44,7 +44,7 @@ This boilerplate uses [`react-app-rewired`](https://github.com/timarney/react-ap
 ## Environment Variables
 You can add a `.env` file in the root directory of the project to use in the project. The starter kit has an `.env.example` file included to get started.
 
-```
+```sh
 $ cp .env.example .env
 ```
 
@@ -59,7 +59,7 @@ If you need to configure your project for multiple environments, (eg. `developme
 
 You can inject a custom environment into the config file by adding shell arguments or modifying the `package.json` file.
 
-```
+```sh
 $ yarn start --environment=staging
 ```
 OR
